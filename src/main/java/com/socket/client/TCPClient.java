@@ -16,7 +16,7 @@ import java.net.SocketTimeoutException;
  **/
 public class TCPClient {
 
-    public void linkwith(ServerInfo info) throws IOException {
+    public void linkWith(ServerInfo info) throws IOException {
         Socket socket = new Socket();
         // 超时时间
         socket.setSoTimeout(3000);

@@ -25,9 +25,13 @@ public class ClientHandler {
         this.client = client;
         this.writeHandler = new WriteHandler(new PrintStream(client.getOutputStream()));
         this.readHandler = new ReadHandler();
-        readHandler.start();
         this.clientHandlerCallback = clientHandlerCallback;
     }
+
+    public void readAndPrint(){
+        this.readHandler.start();
+    }
+
 
     public interface ClientHandlerCallback {
         // 收到消息时通知

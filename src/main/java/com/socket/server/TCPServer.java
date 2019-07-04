@@ -66,6 +66,7 @@ public class TCPServer implements ClientHandler.ClientHandlerCallback {
                     Socket client = server.accept();
                     System.out.println("新客户端连接进来" + client.getInetAddress());
                     ClientHandler clientHandler = new ClientHandler(client, TCPServer.this);
+                    clientHandler.readAndPrint();
                     synchronized (TCPServer.this) {
                         clientHandlers.add(clientHandler);
                     }

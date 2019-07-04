@@ -15,7 +15,7 @@ public class Client {
         ServerInfo serverInfo = UDPSearcher.searchServer(10,TimeUnit.SECONDS);
         System.out.println(serverInfo);
         TCPClient tcpClient = new TCPClient();
-        tcpClient.linkwith(serverInfo);
+        tcpClient.linkWith(serverInfo);
     }
 
 
