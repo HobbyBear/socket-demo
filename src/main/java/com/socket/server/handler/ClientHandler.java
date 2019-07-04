@@ -19,9 +19,9 @@ public class ClientHandler {
 
     private ReadHandler readHandler;
 
-    private ClientHandlerCallback clientHandlerCallback;
+    private ClientHandlerObserver clientHandlerCallback;
 
-    public ClientHandler(Socket client, ClientHandlerCallback clientHandlerCallback) throws IOException {
+    public ClientHandler(Socket client, ClientHandlerObserver clientHandlerCallback) throws IOException {
         this.client = client;
         this.writeHandler = new WriteHandler(new PrintStream(client.getOutputStream()));
         this.readHandler = new ReadHandler();
@@ -32,8 +32,10 @@ public class ClientHandler {
         this.readHandler.start();
     }
 
-
-    public interface ClientHandlerCallback {
+    /**
+     * clientHandler的观察者
+     */
+    public interface ClientHandlerObserver {
         // 收到消息时通知
         void onNewMessageArrived(ClientHandler handler, String msg);
 

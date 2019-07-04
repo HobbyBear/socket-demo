@@ -13,7 +13,7 @@ import java.util.List;
  * @author: xch
  * @create: 2019-07-02 15:49
  **/
-public class TCPServer implements ClientHandler.ClientHandlerCallback {
+public class TCPServer implements ClientHandler.ClientHandlerObserver {
 
     private int port;
 
